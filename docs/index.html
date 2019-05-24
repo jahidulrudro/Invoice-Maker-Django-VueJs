@@ -1,0 +1,450 @@
+<html lang="en-us"><!--<![endif]--><head>
+  <meta charset="utf-8">
+
+  <title>Invoice Maker using Django and Vue.js</title>
+
+  <meta name="author" content="Shakib">
+  <meta name="copyright" content="Enabled">
+  <link rel="stylesheet" href="css/documenter_style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+  <script src="js/jquery.js"></script>
+
+  <style>
+    html {
+      background-color: #FFFFFF;
+      color: #383838;
+    }
+
+    ::-moz-selection {
+      background: #444444;
+      color: #DDDDDD;
+    }
+
+    ::selection {
+      background: #444444;
+      color: #DDDDDD;
+    }
+
+    #documenter_sidebar #documenter_logo {
+      background-image: url(css/img/logo.png);
+    }
+
+    a {
+      color: #0000FF;
+    }
+
+    hr {
+      border-top: 1px solid #EBEBEB;
+      border-bottom: 1px solid #FFFFFF;
+    }
+
+    #documenter_sidebar,
+    #documenter_sidebar ol a {
+      background-color: #2196F3;
+      color: #000;
+    }
+
+    #documenter_sidebar ol a {
+      color: #FFF;
+    }
+
+    #documenter_sidebar ol a:hover {
+      background: #3e3838;
+      color: #DDDDDD;
+      border-top: 1px solid #444444;
+    }
+
+    #documenter_sidebar ol a.current {
+      background: #3e3838;
+      color: #ffffff;
+      border-top: 1px solid #444444;
+    }
+
+    #documenter_copyright {
+      display: block !important;
+      visibility: visible !important;
+    }
+
+    div#documenter_sidebar h4 {
+      text-align: center;
+      font-size: 25px;
+      color: #fff;
+      margin: 50px 0;
+      font-weight: 700;
+    }
+
+    div#documenter_copyright p {
+      text-align: center;
+      color: #f7f7f7;
+      font-size: 14px;
+    }
+    #documenter_sidebar p {
+      color: #f7f7f7;
+      text-align: center;
+    }
+  </style>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div id="documenter_sidebar">
+    <h4>Invoisu</h4>
+    <p>© Synchrotheme 2019</p>
+    <ol id="documenter_nav">
+      <li><a class="smoth-scroll" href="#documenter_cover">Start</a></li>
+      <li><a class="smoth-scroll" href="#structure">Files and folders structure</a></li>
+      <li><a class="smoth-scroll" href="#install">Installation</a></li>
+      <li><a class="smoth-scroll" href="#grid">Grid System</a></li>
+      <li><a class="smoth-scroll" href="#icons">Font Icons</a></li>
+      <li><a class="smoth-scroll" href="#admin-panel">Admin Panel</a></li>
+      <li><a class="smoth-scroll" href="#users">Users</a></li>
+      <li><a class="smoth-scroll" href="#items">Items</a></li>
+      <li><a class="smoth-scroll" href="#invoices">Invoices</a></li>
+      <li><a class="smoth-scroll" href="#clients">Clients</a></li>
+      <li><a class="smoth-scroll" href="#company">Company</a></li>
+      <li><a class="smoth-scroll" href="#generating-invoice">Generate Invoices</a></li>
+    </ol>
+  </div>
+  <div id="documenter_content">
+    <section id="documenter_cover">
+      <h1>Invoisu - Invoice Maker</h1>
+      <h2>Invoice Maker Built with Django and Vue.js</h2>
+      <hr>
+      <ul>
+        <li>Created: 02/02/2018</li>
+        <li>By: Synchrotheme</li>
+        <li>Email: <a href="mailto:info@synchronisebd.com ">info@synchronisebd.com </a></li>
+      </ul>
+      <p>
+        Thank you for purchasing <b>"Invoisu - Invoice Generator"</b>.
+        If you have any questions that are beyond the scope of this help file,
+        please feel free to submit a ticket at our <a href="https://www.synchronisebd.com/ ">Support Forum</a>. Thanks so much!
+      </p>
+      <p>
+        <b>"Invoisu"</b> is a fully functional Django and Vue.js based app developed with care.
+        It is fully responsive template based on Twitter Bootstrap framework.
+        It also uses the extensive CoreUI admin template for its admin panel.
+        Its not only responsive whereas it is retina ready also, now no blurry images on your HiDPI and retina devices.
+      </p>
+      <h2>How to use <b>Invoisu</b>?</h2>
+      <p>
+        <b>"Invoisu"</b> is very easy to update and modify, it will adapt your website and brand in no time.
+        Steps for modification and updating are described step by step in this exclusive documentation.
+      </p>
+    </section>
+
+    <section id="structure">
+      <h2>Files and folders structure</h2>
+      <hr>
+      <p>
+        Whole app is divided in to several directories and subdirectories.
+        The whole app consists of Vue components, subcomponents and Django specific python files.
+        The whole directory structure is given below.
+        The work of every component and subcomponent can be easily understood by their name.
+      </p>
+      <p>
+        <small>
+        <b>P.S.</b> This directory structure is adopted from an open-source template for using <kbd>Django</kbd> and <kbd>Vue.js</kbd> together. <br>
+        This is the link for the default template: <a href="https://github.com/gtalarico/django-vue-template">https://github.com/gtalarico/django-vue-template</a>.
+        </small>
+      </p>
+      <pre>
+├── babel.config.js     // Configuration for Babel
+├── backend             // Django apps and configuration directory
+│  ├── api             // Django api app directory
+│  ├── authentication  // Django authentication app directory
+│  ├── clients         // Django clients app directory
+│  ├── company         // Django company app directory
+│  ├── invoices        // Django invoices app directory
+│  ├── items           // Django items app directory
+│  └──  settings        // Django settings directory both for production and development
+├── manage.py           // Django manage.py file
+├── package.json        // node package.json file for dependency management
+├── Pipfile             // Pipfile for for python package dependency management
+├── public              // public directory for vue app
+├── requirements.txt    // Python requirements.txt
+├── src                 // Vue app source directory
+├── templates           // Templates directory for Django app
+└── vue.config.js       // Vue configuration file
+      </pre>
+    </section>
+    <section id="install">
+      <h2>Setup the app</h2>
+      <hr>
+      <p>
+        </p><ul>
+          <li>Install <a href="https://www.python.org/downloads/release/python-371/"><kbd>Python 3.7.1</kbd></a></li>
+          <li>Install the Python dependencies
+          <pre>pip install pipenv
+pipenv install</pre>
+          </li>
+          <li>Run database migration to create necessary tables and datas.<pre>python manage.py migrate</pre>
+          </li>
+          <li>Set <kbd>ALLOWED_HOSTS</kbd> on <kbd>backend/settings/prod.py</kbd>.</li>
+          <li>
+            Install <a href="https://nodejs.org/en/download/"><kbd>npm</kbd></a> or
+            <a href="https://yarnpkg.com/lang/en/docs/install"><kbd>yarn</kbd></a></li>
+          <li>
+            Install all the required javascript dependencies
+            <pre>yarn install // For yarn
+npm install  // For npm</pre>
+          </li>
+          <li>
+            Build for Production
+            <pre>yarn build  // For yarn
+npm run build  // For npm</pre>
+          </li>
+        </ul>
+        After building for production it will create a <kbd>dist</kbd> directory in the root directory.
+        This directory will be served by the Django app.
+        <br>
+        <small>
+          <b>P.S.</b> Everytime you change anything in the source code you must build the template again.
+          Otherwise, your changes will not reflect on the template.</small>
+      <p></p>
+
+      <h2>INSTALLATION ON YOUR SERVER</h2>
+      <hr>
+      <p>After building the template for production you can easily deploy the app to your server.<br>
+      <strong>Step 1</strong> - Install <kbd>apache</kbd> and <kbd>mod_wsgi</kbd> in your server.<br>
+      <strong>Step 2</strong> - Configure <kbd>apache</kbd> and <kbd>wsgi</kbd> in your server following <a href="https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/modwsgi/">this link</a>.<br>
+      server.<br>
+      </p>
+      <br><br>
+
+      <h2>Testing Locally</h2>
+      <hr>
+      <p>
+        You can test the app locally easily with the below steps:
+        </p><ul>
+          <li>Install Python 3.7, node, yarn/npm.</li>
+          <li>Run the migration using this command: <kbd>python manage.py migrate</kbd></li>
+          <li>Run the local django server: <kbd>python manage.py runserver</kbd></li>
+          <li>Run the local yarn server: <kbd>yarn serve</kbd> or <kbd>npm run serve</kbd></li>
+        </ul>
+        P.S. You can test your app using only the django server also. Then you'll have to run <kbd>yarn build</kbd> everytime after changing anything inside your app.
+      <p></p>
+
+    </section>
+    <section id="grid">
+      <h2>Grid system</h2>
+      <hr>
+      <p><b>"Invoisu"</b> is based upon Twitter Bootstrap css framework that is very easy to use and adapt. It follows the
+        mobile first approach to make the website readily available for all devices and screen sizes. Bootstrap grid is
+        based upon 12 columns that are well defined in the bootstrap.css file inside the css folder. You can get to
+        know about the grid system in detail from this url <a href="https://getbootstrap.com/docs/4.0/layout/grid/">https://getbootstrap.com/docs/4.0/layout/grid/</a></p>
+      <p>We used a package called <kbd>bootstrap-vue</kbd> to implement the Bootstrap 4 Grid into the template. You
+        can find out more about the package here: <a href="https://bootstrap-vue.js.org/">https://bootstrap-vue.js.org/</a>
+      </p>
+    </section>
+
+
+    <section id="icons">
+      <h2>Icons font</h2>
+      <hr>
+      <h3>Font Awesome</h3>
+      <p><b>"Invoisu"</b> uses font awesome icon fonts for its icons requirement and no images has been used for any icon. A
+        complete list of icons along with the class names can be found here: <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">https://fontawesome.com/icons</a></p>
+      <p>
+        We used the <kbd>vue-fontawesome</kbd> package to implement the FontAwesome Icons into the template.
+        To know how to use the package goto <a href="https://github.com/FortAwesome/vue-fontawesome#usage">this</a>
+        link.
+      </p>
+      <br>
+      <h3>Simple Line Icons</h3>
+      <p>
+        We have also used <kbd>simple-line-icons</kbd> for some fonts.
+      </p>
+    </section>
+
+    <section id="admin-panel">
+      <h2>Admin Panel</h2>
+      <hr>
+      <h3>CoreUI Admin Template</h3>
+      <p>
+        We have used the CoreUI admin template for our Invoice Generators admin template.
+        You can find details about this admin template <a href="https://coreui.io/">here</a>.
+      </p>
+    </section>
+
+    <section id="users">
+      <h2>Default User</h2>
+      <hr>
+      <p>
+        A default user will be created when the database migrations run for the first time. <br>
+        This User will have the below login Credentials: <br>
+        <b>Username:</b> <kbd>admin</kbd><br>
+        <b>Password:</b> <kbd>admin</kbd><br>
+        You can edit the default user by through the Admin Panels Users section after logging in.
+      </p>
+      <br><br>
+      <h2>Users</h2>
+      <hr>
+      <p>
+        This section contains all the users in the App database. <br>
+        You can Add, Edit, Delete and also get a PDF view of the User List from this section.
+      </p>
+      <p>
+        You can access the django views code in the <kbd>backend/authentication/apiviews.py</kbd><br>
+        You can get a list of all the Users by sending a <kbd>GET</kbd> request to this URL: <kbd>/api/users</kbd> <br>
+        You can create a new User by sending a <kbd>POST</kbd> request to this URL: <kbd>/api/users</kbd> <br>
+        You can get details of a particular User by sending a <kbd>GET</kbd> request to this URL with his/her Username: <kbd>/api/items/:username</kbd> <br>
+        You can update a particular User details by sending <kbd>PUT</kbd> request to this URL with his/her Username: <kbd>/api/items/:username</kbd><br>
+        You can delete a particular User details by sending <kbd>DELETE</kbd> request to this URL with his/her Username: <kbd>/api/items/:username</kbd><br>
+        You can view your Users from your Admin Panel from this URL: <kbd>#/items</kbd>.
+      </p>
+      <p>
+        Users data format(All fields are required):
+        <pre>
+{
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "username": "",
+    "password": "",        // Only needed for creating users
+    "is_active": false,
+    "is_superuser": false
+}</pre>
+      </p>
+    </section>
+
+    <section id="items">
+      <h2>Items</h2>
+      <hr>
+      <p>
+        This section contains all the items in the App database. <br>
+        You can Add, Edit, Delete and also get a PDF view of the Item List from this section.
+      </p>
+      <p>
+        You can access the django views code in the <kbd>backend/items/apiviews.py</kbd><br>
+        You can get a list of all the Items by sending a <kbd>GET</kbd> request to this URL: <kbd>/api/items</kbd> <br>
+        You can create a new Item by sending a <kbd>POST</kbd> request to this URL: <kbd>/api/items</kbd> <br>
+        You can get details of a particular Item by sending a <kbd>GET</kbd> request to this URL with his/her ID: <kbd>/api/items/:id</kbd> <br>
+        You can update a particular Item details by sending <kbd>PUT</kbd> request to this URL with his/her ID: <kbd>/api/items/:id</kbd><br>
+        You can delete a particular Item details by sending <kbd>DELETE</kbd> request to this URL with his/her ID: <kbd>/api/items/:id</kbd><br>
+        You can view your Items from your Admin Panel from this URL: <kbd>#/items</kbd>.
+      </p>
+      <p>
+        Items Data format(All fields are required):
+        <pre>
+{
+    "serial_number": "",
+    "name": "",
+    "model": "",
+    "price": null,
+    "description": ""
+}</pre>
+      </p>
+    </section>
+
+    <section id="invoices">
+      <h2>Invoices</h2>
+      <hr>
+      <p>
+        This section contains all the invoices in the App database. <br>
+        You can Add, Edit, Delete and also get a PDF view of the Invoice List and Invoice Detail from this section.
+      </p>
+      <p>
+        You can access the django views code in the <kbd>backend/invoices/apiviews.py</kbd><br>
+        You can get a list of all the Invoices by sending a <kbd>GET</kbd> request to this URL: <kbd>/api/invoices</kbd> <br>
+        You can create a new Invoice by sending a <kbd>POST</kbd> request to this URL: <kbd>/api/invoices</kbd> <br>
+        You can get details of a particular Invoice by sending a <kbd>GET</kbd> request to this URL with his/her ID: <kbd>/api/invoices/:id</kbd> <br>
+        You can update a particular Invoice details by sending <kbd>PUT</kbd> request to this URL with his/her ID: <kbd>/api/invoices/:id</kbd><br>
+        You can delete a particular Invoice details by sending <kbd>DELETE</kbd> request to this URL with his/her ID: <kbd>/api/invoices/:id</kbd><br>
+        You can view your Invoices from your Admin Panel from this URL: <kbd>#/invoices</kbd>.
+      </p>
+      <p>
+        Invoices Data format(All fields are required):
+        <pre>
+{
+    "invoice_items": [],      // { item: ITEM_ID, quantity: 1 }
+    "date": null,
+    "subtotal": null,
+    "vat_percentage": null,
+    "total": null,
+    "total_paid": null,
+    "total_due": null,
+    "payment_term": "",
+    "client": null            // Client ID
+}</pre>
+      </p>
+    </section>
+
+    <section id="clients">
+      <h2>Clients</h2>
+      <hr>
+      <p>
+        This section contains all the clients in the App database. <br>
+        You can Add, Edit, Delete and also get a PDF view of the Client List from this section.
+      </p>
+      <p>
+        You can access the django views code in the <kbd>backend/clients/apiviews.py</kbd><br>
+        You can get a list of all the Clients by sending a <kbd>GET</kbd> request to this URL: <kbd>/api/clients</kbd> <br>
+        You can create a new Client by sending a <kbd>POST</kbd> request to this URL: <kbd>/api/clients</kbd> <br>
+        You can get details of a particular Client by sending a <kbd>GET</kbd> request to this URL with his/her ID: <kbd>/api/clients/:id</kbd> <br>
+        You can update a particular Client details by sending <kbd>PUT</kbd> request to this URL with his/her ID: <kbd>/api/clients/:id</kbd><br>
+        You can delete a particular Client details by sending <kbd>DELETE</kbd> request to this URL with his/her ID: <kbd>/api/clients/:id</kbd><br>
+        You can view your Clients from your Admin Panel from this URL: <kbd>#/clients</kbd>.
+      </p>
+      <p>
+        Client Data Format(All Fields are required).
+      <pre>
+{
+    "name": "",
+    "email": "",
+    "phone": "",
+    "business": "",
+    "country": null,
+    "zip_code": null
+}</pre>
+      </p>
+    </section>
+
+    <section id="company">
+      <h2>Company</h2>
+      <hr>
+      <p>
+        You can add your Company details here.
+        It will automatically reflect everywhere in the database.
+      </p>
+      <p>
+        You can access the django views code in the <kbd>backend/company/apiviews.py</kbd><br>
+        You can get details of your website by sending a <kbd>GET</kbd> request to this URL: <kbd>/api/company</kbd> <br>
+        You can update your Company details by sending <kbd>PUT</kbd> request to this URL: <kbd>/api/company</kbd><br>
+        You can view your Company settings from your Admin Panel from this URL: <kbd>#/company</kbd>.
+      </p>
+      <p>
+        Company Data format(All fields are required):
+        <pre>
+{
+    "name": "",
+    "email": "",
+    "address": "",
+    "phone": "",
+    "currency": "",
+    "logo": null
+}</pre>
+      </p>
+    </section>
+
+    <section id="generating-invoice">
+      <h2>Generate Invoice</h2>
+      <hr>
+      <p>
+        To generate an Invoice there are 2 pre-requisites:
+        <ol>
+          <li>A client must exist on database.</li>
+          <li>An item must exist on database.</li>
+        </ol>
+        <br>
+        Then the invoice can be generated easily by pressing the related book icon in the Invoice List Page.
+        It will generate a PDF which can be viewed in the browser before downloading.
+      </p>
+    </section>
+
+  </div>
+
+
+</body>
+</html>

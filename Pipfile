@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+gunicorn = "*"
+whitenoise = "==4.0"
+mysqlclient = "*"
+django-countries = "*"
+pillow = "*"
+django-weasyprint = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
